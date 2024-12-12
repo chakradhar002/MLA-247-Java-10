@@ -1,0 +1,43 @@
+SQL with MySQL
+RDBMS, Normalization and Types,
+SQL, ER Diagram, DDL, DML, DQL, Constraints, OrderBy, GroupBy, Joins, Functions, Subqueries, View, Index, Stored Procedures.
+Core Java
+OOP, Class, Abstract Class, Interfaces, default, Wrapper classes, String, String Buffer, String Builder, static, final, Threads, Exception Handling, File Handling, I/O, Serializable,
+Generics, Collection, Comparable, Comparator,
+Lambda, Method References, Stream, Java 8 Build-in Function, Map, Lazy Loading, Searching, Sorting, Stack, Queue, Java 8 - Date & Time,  JDBC, GC,
+
+Design Patterns – Singleton, Factory, Abstract Factory, Builder, Immutable, Template,
+
+JUnit, Best Practices and Coding Conventions.
+Advance Java
+Servlet, JSP, Filters, JSTL, EL, Custom Tags.
+Hibernate (using Annotations)
+Architecture - SessionFactory, Session, Transaction API, Entity,
+Problem of Granularity, Problem of Relationship, Problem of Inheritance,
+Levels of Cache.
+Spring Framework
+Spring IoC Design Pattern, Dependency Injection, Autowiring, Scope, Container Extension Points, SpEL,
+Spring AOP, Spring JDBC, Spring Hibernate, Spring Transaction Management,
+Spring MVC, RESTful Services with Spring,
+Spring Boot App
+Spring Boot Data – CRUDRepository, JPARepository,
+Starters, Custom Configuration, Restful webservices, Actuator, DevTools.
+HTML5, Javascript, CSS3
+HTML5 Layout, Tables, Div, Forms, Input, Datalist Tag, Session Storage, Local Storage, AJAX,
+Audio, Video, GeoLocation, Drag/Drop, Web Storage, Web Workers,
+CSS3 syntax, Colors, Containers, Panels, Borders, Cards, Padding, Margins, Table, Lists, Input, Tabs, Pagination, Sidebar, Grid,
+JS syntax, variables, data types, operators, functions, object, constructors, events, string, number, arrays, dates, math, set, maps, destructing, RegExp.
+Bootstrap 4
+Containers, Grid, Colors, Tables, Buttons, Badges, Pagination, Cards, Nav, Forms, Carousel.
+TypeScript
+Simple Types, Special Types, Arrays, Tuples, Object Types, Enum, Interfaces, Functions, Classes.
+Angular
+Installing Angular CLI, CLI commands, Installing Bootstrap, Directory Structure,
+Decorators in Angular, Components, Data Binding, Passing Data between Components,
+Directives – Structural and Attribute Directives, HostListener, HostBinding,
+Angular DevTools, LifeCycle Hooks, Pipes,
+Services and Dependency Injection,
+Building Template Forms and Reactive Forms, Validators,
+Loading Strategies – Lazy, Eager, Pre,
+Routing, Router Outlets, Passing Parameters to Routes, Life cycle of Router, Implementing Guards and Resolvers
+RXJS and Http Programming
