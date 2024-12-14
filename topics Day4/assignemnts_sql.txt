@@ -1,0 +1,43 @@
+
+List all airlines from a specific country.
+Find airlines founded before the year 2000.
+Retrieve all airports in a specific city.
+Find airports with IATA codes starting with 'J'.
+Find all flights departing from a specific airport.
+List delayed or cancelled flights.
+Find passengers with a specific nationality.
+List passengers born after the year 1990.
+Find all bookings for a specific flight.
+Count confirmed bookings for each flight.
+Retrieve all employees working at a specific airport.
+Find employees hired after a certain date.
+Calculate the total baggage weight for a specific booking.
+List all baggage items exceeding 23 kg.
+Retrieve all crew members for a specific flight.
+Count the number of pilots per flight.
+List all aircraft with pending maintenance.
+Find maintenance tasks completed in the last 30 days.
+List all facilities available at a specific airport.
+Find airports with a specific facility (e.g., 'Lounge').
+Would you like me to generate more queries or refine these scenarios?
+Find the total number of airlines per country.
+Identify airlines with duplicate IATA codes (if any).
+List all airports in a specific country with more than one airport.
+Find the airport with the longest ICAO code.
+Find flights scheduled between two specific dates.
+List flights that were delayed by more than a certain number of hours.
+List the top 5 countries with the highest number of passengers.
+Find passengers with duplicate passport numbers.
+Find the most popular flights based on booking count.
+Retrieve bookings made within the last week.
+List employees by their roles across all airports.
+Find the highest-paid employee at a specific airport.
+Baggage
+Identify bookings with total baggage weight exceeding a certain limit.
+List all bookings with more than three pieces of baggage.
+Find flights that have no assigned crew members.
+Count the total number of crew members for each role.
+List all aircraft scheduled for maintenance in the next 30 days.
+Find the most frequently maintained aircraft.
+Count the number of facilities available at each airport.
+List the airports with a specific facility type.
