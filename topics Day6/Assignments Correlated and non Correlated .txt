@@ -1,0 +1,70 @@
+CREATE TABLE `Employee` (
+    `EmployeeID` INT AUTO_INCREMENT PRIMARY KEY,
+    `Name` VARCHAR(100),
+    `DepartmentID` INT,
+    `Salary` DECIMAL(10, 2),
+    FOREIGN KEY (`DepartmentID`) REFERENCES `Department`(`DepartmentID`)
+);
+
+CREATE TABLE `Department` (
+    `DepartmentID` INT AUTO_INCREMENT PRIMARY KEY,
+    `DepartmentName` VARCHAR(100)
+);
+
+CREATE TABLE `Student` (
+    `StudentID` INT AUTO_INCREMENT PRIMARY KEY,
+    `Name` VARCHAR(100),
+    `CourseID` INT,
+    `Grade` DECIMAL(5, 2),
+    FOREIGN KEY (`CourseID`) REFERENCES `Course`(`CourseID`)
+);
+
+CREATE TABLE `Course` (
+    `CourseID` INT AUTO_INCREMENT PRIMARY KEY,
+    `CourseName` VARCHAR(100)
+);
+
+
+
+
+
+
+
+
+Assignments on Non-Correlated Subqueries
+Find Employees Earning Above the Average Salary
+
+Task: Retrieve the names of employees whose salary is greater than the average salary of all employees.
+Tables: Employee (EmployeeID, Name, Salary).
+Hint: Use a non-correlated subquery to compute the overall average salary and compare it to each employee’s salary.
+Find Departments with More Than 5 Employees
+
+Task: List the department names that have more than 5 employees.
+Tables: Department (DepartmentID, DepartmentName), Employee (EmployeeID, DepartmentID).
+Hint: Use a non-correlated subquery to count the number of employees in each department and compare it to 5.
+Find Products That Are Not in the Top 5 Most Expensive Products
+
+Task: Retrieve all products whose price is not in the top 5 most expensive products.
+Tables: Product (ProductID, ProductName, Price).
+Hint: Use a non-correlated subquery to find the top 5 most expensive products by price and exclude them from the outer query.
+List Employees Who Do Not Work on Any Project
+
+Task: Retrieve the names of employees who are not assigned to any project.
+Tables: Employee (EmployeeID, Name), Project (ProjectID, EmployeeID).
+Hint: Use a non-correlated subquery to find employees who do not appear in the Project table.
+Find Courses That Have More Than 50 Students Enrolled
+
+Task: List the course names that have more than 50 students enrolled.
+Tables: Course (CourseID, CourseName), Enrollment (EnrollmentID, CourseID, StudentID).
+Hint: Use a non-correlated subquery to count the number of students enrolled in each course and compare it to 50.
+Bonus Assignments Involving Both Types of Subqueries
+Find Employees Who Earn More than the Average Salary in Their Department and the Overall Company
+
+Task: List employees who earn more than both the average salary of their department and the average salary of the entire company.
+Tables: Employee (EmployeeID, Name, DepartmentID, Salary), Department (DepartmentID, DepartmentName).
+Hint: Combine both correlated and non-correlated subqueries to compare the employee's salary with the average salary in both the department and the company.
+Find Products That Are More Expensive Than the Average Price in Their Category, but Less Expensive Than the Most Expensive Product in That Category
+
+Task: Retrieve products whose price is higher than the average price but less than the maximum price in their category.
+Tables: Product (ProductID, ProductName, CategoryID, Price), Category (CategoryID, CategoryName).
+Hint: Use a correlated subquery to find the average price in each category and a non-correlated subquery to find the most expensive product in each category.

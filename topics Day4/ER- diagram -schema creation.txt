@@ -1,0 +1,192 @@
+-- Airport Management System Schema
+
+-- Table to store information about airlines
+CREATE TABLE Airlines (
+    AirlineID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Country VARCHAR(100) NOT NULL,
+    FoundedYear YEAR,
+    IATA_Code CHAR(2) NOT NULL UNIQUE,
+    ICAO_Code CHAR(3) NOT NULL UNIQUE
+);
+
+-- Table to store airport details
+CREATE TABLE Airports (
+    AirportID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    Country VARCHAR(100) NOT NULL,
+    IATA_Code CHAR(3) NOT NULL UNIQUE,
+    ICAO_Code CHAR(4) NOT NULL UNIQUE
+);
+
+-- Table to store flight details
+CREATE TABLE Flights (
+    FlightID INT AUTO_INCREMENT PRIMARY KEY,
+    AirlineID INT NOT NULL,
+    FlightNumber VARCHAR(10) NOT NULL,
+    OriginAirportID INT NOT NULL,
+    DestinationAirportID INT NOT NULL,
+    DepartureTime DATETIME NOT NULL,
+    ArrivalTime DATETIME NOT NULL,
+    Status ENUM('Scheduled', 'Delayed', 'Cancelled', 'Departed', 'Arrived') DEFAULT 'Scheduled',
+    FOREIGN KEY (AirlineID) REFERENCES Airlines(AirlineID) ON DELETE CASCADE,
+    FOREIGN KEY (OriginAirportID) REFERENCES Airports(AirportID) ON DELETE CASCADE,
+    FOREIGN KEY (DestinationAirportID) REFERENCES Airports(AirportID) ON DELETE CASCADE
+);
+
+-- Table to store passenger information
+CREATE TABLE Passengers (
+    PassengerID INT AUTO_INCREMENT PRIMARY KEY,
+    FirstName VARCHAR(100) NOT NULL,
+    LastName VARCHAR(100) NOT NULL,
+    PassportNumber VARCHAR(20) UNIQUE,
+    Nationality VARCHAR(100),
+    DateOfBirth DATE,
+    Gender ENUM('Male', 'Female', 'Other')
+);
+
+-- Table to manage flight bookings
+CREATE TABLE Bookings (
+    BookingID INT AUTO_INCREMENT PRIMARY KEY,
+    FlightID INT NOT NULL,
+    PassengerID INT NOT NULL,
+    SeatNumber VARCHAR(5),
+    BookingDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    Status ENUM('Confirmed', 'Cancelled') DEFAULT 'Confirmed',
+    FOREIGN KEY (FlightID) REFERENCES Flights(FlightID) ON DELETE CASCADE,
+    FOREIGN KEY (PassengerID) REFERENCES Passengers(PassengerID) ON DELETE CASCADE
+);
+
+-- Table to store employee information
+CREATE TABLE Employees (
+    EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
+    FirstName VARCHAR(100) NOT NULL,
+    LastName VARCHAR(100) NOT NULL,
+    Position VARCHAR(100) NOT NULL,
+    HireDate DATE NOT NULL,
+    Salary DECIMAL(10, 2) NOT NULL,
+    AirportID INT NOT NULL,
+    FOREIGN KEY (AirportID) REFERENCES Airports(AirportID) ON DELETE CASCADE
+);
+
+-- Table to store baggage information
+CREATE TABLE Baggage (
+    BaggageID INT AUTO_INCREMENT PRIMARY KEY,
+    BookingID INT NOT NULL,
+    Weight DECIMAL(5, 2) NOT NULL,
+    Dimensions VARCHAR(50),
+    FOREIGN KEY (BookingID) REFERENCES Bookings(BookingID) ON DELETE CASCADE
+);
+
+-- Table to store flight crew assignments
+CREATE TABLE FlightCrew (
+    CrewID INT AUTO_INCREMENT PRIMARY KEY,
+    FlightID INT NOT NULL,
+    EmployeeID INT NOT NULL,
+    Role ENUM('Pilot', 'Co-Pilot', 'Cabin Crew', 'Engineer') NOT NULL,
+    FOREIGN KEY (FlightID) REFERENCES Flights(FlightID) ON DELETE CASCADE,
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID) ON DELETE CASCADE
+);
+
+-- Table to store maintenance schedules
+CREATE TABLE Maintenance (
+    MaintenanceID INT AUTO_INCREMENT PRIMARY KEY,
+    AircraftID VARCHAR(50) NOT NULL,
+    ScheduledDate DATE NOT NULL,
+    CompletedDate DATE,
+    Status ENUM('Scheduled', 'In Progress', 'Completed') DEFAULT 'Scheduled',
+    Notes TEXT
+);
+
+-- Table to track airport facilities
+CREATE TABLE Facilities (
+    FacilityID INT AUTO_INCREMENT PRIMARY KEY,
+    AirportID INT NOT NULL,
+    Name VARCHAR(100) NOT NULL,
+    Description TEXT,
+    FOREIGN KEY (AirportID) REFERENCES Airports(AirportID) ON DELETE CASCADE
+);
+
+-- Insert records into Airlines
+INSERT INTO Airlines (Name, Country, FoundedYear, IATA_Code, ICAO_Code) VALUES
+('Airline A', 'Country A', 1990, 'AA', 'AAA'),
+('Airline B', 'Country B', 1985, 'BB', 'BBB'),
+('Airline C', 'Country C', 2000, 'CC', 'CCC'),
+('Airline D', 'Country D', 2010, 'DD', 'DDD'),
+('Airline E', 'Country E', 1995, 'EE', 'EEE');
+
+-- Insert records into Airports
+INSERT INTO Airports (Name, City, Country, IATA_Code, ICAO_Code) VALUES
+('Airport X', 'City X', 'Country X', 'AXX', 'AXXX'),
+('Airport Y', 'City Y', 'Country Y', 'AYY', 'AYYY'),
+('Airport Z', 'City Z', 'Country Z', 'AZZ', 'AZZZ'),
+('Airport W', 'City W', 'Country W', 'AWW', 'AWWW'),
+('Airport V', 'City V', 'Country V', 'AVV', 'AVVV');
+
+-- Insert records into Flights
+INSERT INTO Flights (AirlineID, FlightNumber, OriginAirportID, DestinationAirportID, DepartureTime, ArrivalTime, Status) VALUES
+(1, 'FL1001', 1, 2, '2024-12-15 08:00:00', '2024-12-15 12:00:00', 'Scheduled'),
+(2, 'FL1002', 2, 3, '2024-12-16 09:00:00', '2024-12-16 13:00:00', 'Scheduled'),
+(3, 'FL1003', 3, 4, '2024-12-17 10:00:00', '2024-12-17 14:00:00', 'Scheduled'),
+(4, 'FL1004', 4, 5, '2024-12-18 11:00:00', '2024-12-18 15:00:00', 'Scheduled'),
+(5, 'FL1005', 5, 1, '2024-12-19 12:00:00', '2024-12-19 16:00:00', 'Scheduled');
+
+-- Insert records into Passengers
+INSERT INTO Passengers (FirstName, LastName, PassportNumber, Nationality, DateOfBirth, Gender) VALUES
+('John', 'Doe', 'P12345', 'USA', '1985-05-15', 'Male'),
+('Jane', 'Smith', 'P67890', 'UK', '1990-07-20', 'Female'),
+('Ali', 'Khan', 'P11111', 'Pakistan', '1978-02-11', 'Male'),
+('Maria', 'Garcia', 'P22222', 'Spain', '1983-10-05', 'Female'),
+('Chen', 'Wei', 'P33333', 'China', '1992-12-23', 'Male');
+
+-- Insert records into Bookings
+INSERT INTO Bookings (FlightID, PassengerID, SeatNumber, BookingDate, Status) VALUES
+(1, 1, '1A', '2024-12-01 10:00:00', 'Confirmed'),
+(2, 2, '2B', '2024-12-02 11:00:00', 'Confirmed'),
+(3, 3, '3C', '2024-12-03 12:00:00', 'Confirmed'),
+(4, 4, '4D', '2024-12-04 13:00:00', 'Confirmed'),
+(5, 5, '5E', '2024-12-05 14:00:00', 'Confirmed');
+
+-- Insert records into Employees
+INSERT INTO Employees (FirstName, LastName, Position, HireDate, Salary, AirportID) VALUES
+('Alice', 'Brown', 'Manager', '2020-01-10', 75000.00, 1),
+('Bob', 'Jones', 'Security', '2018-05-15', 40000.00, 2),
+('Charlie', 'Taylor', 'Technician', '2019-03-20', 50000.00, 3),
+('Diana', 'Moore', 'Pilot', '2017-07-25', 90000.00, 4),
+('Eve', 'Wilson', 'Cabin Crew', '2021-11-30', 35000.00, 5);
+
+-- Insert records into Bagg
+INSERT INTO Baggage (BookingID, Weight, Dimensions) VALUES
+(1, 23.5, '55x40x20 cm'),
+(2, 19.0, '50x35x15 cm'),
+(3, 25.0, '60x45x25 cm'),
+(4, 22.0, '55x38x20 cm'),
+(5, 20.5, '50x37x18 cm');
+
+-- Insert records into FlightCrew
+INSERT INTO FlightCrew (FlightID, EmployeeID, Role) VALUES
+(1, 4, 'Pilot'),
+(1, 3, 'Co-Pilot'),
+(2, 5, 'Cabin Crew'),
+(3, 2, 'Engineer'),
+(4, 1, 'Pilot');
+
+-- Insert records into Maintenance
+INSERT INTO Maintenance (AircraftID, ScheduledDate, CompletedDate, Status, Notes) VALUES
+('AC123', '2024-12-20', NULL, 'Scheduled', 'Routine checkup'),
+('AC124', '2024-12-21', NULL, 'Scheduled', 'Engine inspection'),
+('AC125', '2024-12-22', '2024-12-23', 'Completed', 'Landing gear maintenance'),
+('AC126', '2024-12-24', NULL, 'In Progress', 'Avionics upgrade'),
+('AC127', '2024-12-25', NULL, 'Scheduled', 'Hydraulic system check');
+
+
+-- Insert records into Facilities
+INSERT INTO Facilities (AirportID, Name, Description) VALUES
+(1, 'Lounge', 'Premium lounge with complimentary snacks and drinks'),
+(2, 'WiFi', 'Free high-speed internet access throughout the terminal'),
+(3, 'Parking', 'Covered parking with 24/7 security'),
+(4, 'Duty-Free Shop', 'Wide range of tax-free products'),
+(5, 'Information Desk', 'Assistance with flight and airport information');
+
+
