@@ -26,7 +26,6 @@ D) boolean
 3. Operators
 What will be the output of this code?
 
-java
 
 int a = 10, b = 5, c = 2; 
 System.out.println(a / b * c + b % c);
@@ -35,8 +34,6 @@ B) 6
 C) 4
 D) Compilation Error
 
-
-(Explanation: 10 / 5 * 2 + 5 % 2 = 2 * 2 + 1 = 5)
 
 4. Data Types
 Which data type is most suitable to store the value 9876543210L?
@@ -55,13 +52,10 @@ B) null
 C) instanceof
 D) volatile
 
-
-(Explanation: null is a literal, not a keyword.)
-
 6. If-Else Logic
 What is the output of the following code?
 
-java
+
 
 int x = 0; 
 if (x = 5) // Assigning instead of checking equality
@@ -72,9 +66,7 @@ A) True
 B) False
 C) Compilation Error
 D) Runtime Error
-
-
-(Explanation: = cannot be used in place of == in a condition.)
+)
 
 7. Primitive Data Sizes
 What is the size of a char in Java?
@@ -88,8 +80,6 @@ D) 64 bits
 8. Arithmetic Operators
 What will be the output of the following code?
 
-java
-
 int a = 10, b = 20; 
 System.out.println(a++ + --b); 
 System.out.println(a + b);
@@ -99,12 +89,8 @@ C) 29, 30
 D) Compilation Error
 
 
-(Explanation: First line evaluates to 10 + 19 = 29 (post-increment a), and in the second line, a = 11, b = 19.)
-
 9. Logical Operators
 What is the result of the following code?
-
-java
 
 boolean a = true, b = false; 
 if (a && b || !b) 
@@ -117,7 +103,6 @@ C) Compilation Error
 D) Runtime Error
 
 
-(Explanation: a && b || !b evaluates to true && false || true = true.)
 
 10. Default Values
 What is the default value of a boolean field in a class?
@@ -140,7 +125,7 @@ A) Less
 B) Not Less
 C) Compilation Error
 D) Runtime Error
-Answer: B) Not Less
+
 
 12. Primitive Types
 Which of these literals is invalid in Java?
@@ -149,9 +134,7 @@ A) 0123
 B) 0x123
 C) 0b101
 D) 08
-Answer: D) 08
 
-(Explanation: Octal numbers (0nnn) can only have digits 0–7.)
 
 13. Operators
 What will this code print?
@@ -163,7 +146,7 @@ A) A
 B) B
 C) Compilation Error
 D) Runtime Error
-Answer: B) B
+
 
 14. Data Types
 Which data type is most suitable to store a value with a fractional component, like 3.14?
@@ -172,7 +155,7 @@ A) int
 B) float
 C) long
 D) byte
-Answer: B) float
+
 
 15. Keywords
 Which of the following is NOT a valid Java keyword?
@@ -181,9 +164,6 @@ A) assert
 B) const
 C) break
 D) transient
-Answer: B) const
-
-(Explanation: const is a reserved word but not used as a keyword in Java.)
 
 16. Control Flow
 What will the following code print?
@@ -200,7 +180,7 @@ A) Positive
 B) Zero
 C) Negative
 D) Compilation Error
-Answer: B) Zero
+
 
 17. Primitive Type Casting
 What will happen when this code is executed?
