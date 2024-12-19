@@ -1,0 +1,216 @@
+
+1. What is an object in Java?
+a) A block of memory
+b) An instance of a class
+c) A function call
+d) A variable
+
+
+2. What is a constructor in Java?
+a) A method that initializes a new object
+b) A method that destroys an object
+c) A method that can return any value
+d) A static method
+
+
+
+3. Which of the following is true about constructors in Java?
+a) Constructors must have the same name as the class
+b) Constructors can have a return type
+c) Constructors can be inherited
+d) Constructors are always abstract
+
+4. How many constructors can a class have in Java?
+a) Only one
+b) Two
+c) Zero or more
+d) Exactly as many as the number of methods
+
+
+5. What is the default constructor?
+a) A constructor with no arguments provided by the programmer
+b) A constructor with parameters provided by the programmer
+c) A constructor with no parameters provided by Java if no constructor is defined
+d) A constructor used to clone objects
+
+
+6. Which of the following is NOT true about methods in Java?
+a) Methods can be overloaded
+b) Methods can be abstract
+c) Methods cannot have the same name
+d) Methods can have different access modifiers
+
+
+7. What is method overloading in Java?
+a) Defining multiple methods with the same name but different parameter lists
+b) Using methods of one class in another
+c) Overriding methods of a superclass
+d) Calling multiple methods in a loop
+
+8. What is method overriding in Java?
+a) Creating a new method with the same name in a subclass
+b) Creating multiple methods with the same name in the same class
+c) Calling multiple methods in a sequence
+d) None of the above
+
+
+9. Which keyword is used to call the parent class constructor in Java?
+a) parent
+b) base
+c) super
+d) this
+
+
+10. Which keyword is used to invoke the current class's constructor?
+a) this
+b) super
+c) self
+d) current
+
+
+
+11. What is the return type of a constructor in Java?
+a) void
+b) Object
+c) The class type
+d) Constructors have no return type
+
+
+12. What is the output of the following code?
+java
+Copy code
+class Test {
+    Test() {
+        System.out.println("Constructor called");
+    }
+    public static void main(String[] args) {
+        Test obj = new Test();
+    }
+}
+a) No output
+b) Constructor called
+c) Compile-time error
+d) Runtime error
+
+13. What happens if a class has no constructors defined?
+a) The class will not compile
+b) Java provides a default constructor
+c) Objects cannot be created from the class
+d) None of the above
+
+14. Can a constructor be private in Java?
+a) Yes, but only in abstract classes
+b) Yes, it is used in singleton design patterns
+c) No, constructors must be public
+d) No, constructors must be protected
+
+15. Which of the following methods is used to compare objects in Java?
+a) compareTo()
+b) compare()
+c) equals()
+d) hashCode()
+
+
+16. What does the toString() method in Java do?
+a) Returns a string representation of an object
+b) Converts an object to a string
+c) Both a and b
+d) None of the above
+
+
+17. Can a constructor call another constructor in the same class?
+a) Yes, using the super keyword
+b) Yes, using the this keyword
+c) No, constructors cannot call each other
+d) Only if the other constructor is public
+
+
+18. What is a static method in Java?
+a) A method that belongs to a class rather than an object
+b) A method that cannot return a value
+c) A method that can only be overridden
+d) A method that must have the same name as the class
+
+
+19. Which of the following statements is true about objects in Java?
+a) An object can exist without a class
+b) Every object has its own copy of class methods
+c) An object is an instance of a class
+d) None of the above
+
+
+20. What does the finalize() method do?
+a) It is used to destroy an object explicitly
+b) It is called by the garbage collector before an object is destroyed
+c) It initializes an object
+d) It clones an object
+
+
+21. Can a constructor be overloaded in Java?
+a) Yes, constructors can be overloaded
+b) No, only methods can be overloaded
+c) Only static constructors can be overloaded
+d) None of the above
+
+22. Which keyword is used to prevent a method from being overridden?
+a) static
+b) final
+c) abstract
+d) private
+
+
+23. Can a method return an object in Java?
+a) Yes, a method can return an object
+b) No, methods can only return primitive data types
+c) Only if the object is static
+d) None of the above
+
+
+24. What is a copy constructor in Java?
+a) A constructor that creates a duplicate object
+b) A constructor that copies values from an array
+c) Java does not have a built-in copy constructor
+d) None of the above
+
+
+25. What is the main purpose of encapsulation in Java?
+a) To provide multiple inheritances
+b) To protect data from unauthorized access
+c) To provide faster execution
+d) To increase object size
+
+
+26. Which method is used to create a copy of an object in Java?
+a) clone()
+b) copy()
+c) duplicate()
+d) replicate()
+
+
+27. Can a class have multiple static methods?
+a) Yes, and they belong to the class rather than objects
+b) No, only one static method is allowed
+c) Only if they are overloaded
+d) Only in abstract classes
+
+
+28. What is the instanceof keyword used for?
+a) To check the class type of an object
+b) To create a new instance of a class
+c) To compare two objects
+d) To call methods on an object
+
+
+29. Can an object be passed as a parameter to a method?
+a) Yes, Java allows objects to be passed as parameters
+b) No, only primitive types can be passed
+c) Only if the object is a string
+d) Only for static methods
+
+
+30. What happens if you explicitly define no constructors in a class?
+a) The class will not compile
+b) Java will provide a default constructor
+c) You must explicitly define at least one constructor
+d) None of the above
+
