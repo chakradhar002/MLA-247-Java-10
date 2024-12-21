@@ -1,0 +1,211 @@
+1. What is the superclass of all exceptions in Java?
+a) Object
+b) Throwable
+c) Exception
+d) RuntimeException
+
+
+2. Which of the following is a checked exception?
+a) NullPointerException
+b) IOException
+c) ArrayIndexOutOfBoundsException
+d) ArithmeticException
+
+
+
+3. What happens if an exception is not caught?
+a) The program compiles successfully.
+b) The program terminates abruptly.
+c) The program continues execution.
+d) The exception is ignored.
+
+
+
+4. Which keyword is used to explicitly throw an exception?
+a) throws
+b) throw
+c) try
+d) catch
+
+
+
+5. Where must the throws clause be declared?
+a) Inside a method
+b) At the end of a method declaration
+c) Anywhere in the class
+d) It is not mandatory
+
+
+
+6. Which block must follow the try block directly?
+a) catch
+b) finally
+c) catch or finally
+d) None of the above
+
+
+
+7. Can a finally block execute if no exception is thrown?
+a) Yes
+b) No
+c) Only if catch executes
+d) Only in checked exceptions
+
+
+
+8. What is the output of the following code snippet?
+java
+Copy code
+try {
+    int x = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("ArithmeticException caught");
+} finally {
+    System.out.println("Finally block executed");
+}
+a) ArithmeticException caught
+b) Finally block executed
+c) Both a and b
+d) Runtime error
+
+
+
+9. Which of these is not a valid Java exception handling keyword?
+a) try
+b) catch
+c) handle
+d) finally
+
+
+
+10. What is the purpose of the finally block?
+a) Handle exceptions
+b) Execute cleanup code
+c) Re-throw exceptions
+d) Catch runtime errors
+
+
+
+11. What will be the output of the following code?
+java
+Copy code
+public static void main(String[] args) {
+    try {
+        return;
+    } finally {
+        System.out.println("Finally block executed");
+    }
+}
+a) Nothing
+b) Finally block executed
+c) Compilation error
+d) Runtime exception
+
+
+
+12. Can multiple catch blocks be associated with a single try block?
+a) Yes
+b) No
+c) Only with checked exceptions
+d) Only if finally is absent
+
+
+
+13. Which exception is thrown when accessing an array index out of bounds?
+a) ArrayStoreException
+b) ArrayIndexOutOfBoundsException
+c) IndexOutOfBoundsException
+d) ArithmeticException
+Answer: b) ArrayIndexOutOfBoundsException
+
+14. Identify the issue in the following code:
+java
+Copy code
+try {
+    int[] arr = new int[5];
+    arr[10] = 50;
+} finally {
+    System.out.println("Finally block executed");
+}
+a) Compile-time error
+b) No exception thrown
+c) Runtime exception: ArrayIndexOutOfBoundsException
+d) Finally block does not execute
+
+
+15. What is the output of this code?
+java
+Copy code
+try {
+    System.out.println("Try block");
+    throw new NullPointerException("Exception thrown");
+} catch (NullPointerException e) {
+    System.out.println("Caught: " + e.getMessage());
+} finally {
+    System.out.println("Finally block");
+}
+a) Try block
+b) Try block, Caught: Exception thrown
+c) Try block, Caught: Exception thrown, Finally block
+d) Compilation error
+
+
+
+16. Can a catch block catch multiple exception types?
+a) Yes, using | (pipe) operator
+b) No, only one exception at a time
+c) Only in Java versions < 7
+d) Only runtime exceptions
+
+
+
+17. What is the correct way to declare a method that throws exceptions?
+a) public void method() throw IOException
+b) public void method() throws IOException
+c) public throws void method(IOException)
+d) public void throws IOException method()
+
+
+
+18. What is the output of this code?
+java
+Copy code
+try {
+    throw new Exception("Test Exception");
+} catch (Exception e) {
+    System.out.println("Caught Exception");
+} catch (Throwable t) {
+    System.out.println("Caught Throwable");
+}
+a) Caught Exception
+b) Caught Throwable
+c) Compilation error
+d) Runtime error
+
+19. What happens if an exception is thrown inside a catch block?
+a) The program stops abruptly.
+b) The exception is propagated.
+c) It is handled by another catch block, if available.
+d) Both b and c.
+
+
+
+20. Write the output of this nested exception code:
+java
+Copy code
+try {
+    try {
+        throw new NullPointerException();
+    } catch (NullPointerException e) {
+        System.out.println("Inner catch block");
+        throw e;
+    }
+} catch (Exception e) {
+    System.out.println("Outer catch block");
+}
+a) Inner catch block
+b) Inner catch block, Outer catch block
+c) Outer catch block
+d) Compilation error
+
+
