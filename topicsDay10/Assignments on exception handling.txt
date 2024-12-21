@@ -1,0 +1,37 @@
+Assignment 1: Basic Exception Handling
+Write a Java program that:
+Asks the user to input two numbers.
+Performs division and displays the result.
+Uses a try-catch block to handle ArithmeticException (e.g., division by zero).
+Ensures the program continues to run even if an exception occurs.
+Assignment 2: Custom Exception
+Create a custom exception class called InvalidAgeException.
+Write a program that:
+Asks the user to enter their age.
+Throws an InvalidAgeException if the age entered is less than 18.
+Uses a try-catch block to catch the exception and display an appropriate message.
+
+Assignment 3: Multiple Exceptions
+Write a program that:
+Reads a number from the user.
+Handles the following exceptions:
+NumberFormatException if the user enters a non-numeric value.
+ArithmeticException if you perform division by zero.
+Ensure the program catches and prints messages for each type of exception.
+
+Assignment 4: Nested Try-Catch
+Write a program that:
+Reads a list of integers from the user.
+Accesses elements from the list using an index provided by the user.
+Uses nested try-catch blocks to handle:
+NumberFormatException for invalid input.
+ArrayIndexOutOfBoundsException if the index is out of bounds.
+Prints appropriate messages for each exception.
+
+Assignment 5: Finally Block
+Write a program that:
+Prompts the user to enter the name of a file.
+Attempts to open the file and read its content.
+Uses try-catch blocks to handle:
+FileNotFoundException if the file doesn't exist.
+Ensures that the finally block closes the file, even if an exception occurs.
