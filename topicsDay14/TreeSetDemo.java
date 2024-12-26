@@ -19,6 +19,17 @@ Null Values:
 
 Does not allow null elements, as it requires elements to be comparable.
 
+Java TreeSet class contains unique elements only like HashSet.
+Java TreeSet class access and retrieval times are quiet fast.
+Java TreeSet class doesn't allow null element.
+Java TreeSet class is non synchronized.
+Java TreeSet class maintains ascending order.
+Java TreeSet class contains unique elements only like HashSet.
+Java TreeSet class access and retrieval times are quite fast.
+Java TreeSet class doesn't allow null elements.
+Java TreeSet class is non-synchronized.
+Java TreeSet class maintains ascending order.
+
  * */
 import java.util.TreeSet;
 
