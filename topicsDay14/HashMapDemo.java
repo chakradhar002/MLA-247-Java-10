@@ -2,6 +2,21 @@ package chapter6;
 
 import java.util.HashMap;
 import java.util.Map;
+/*
+Key Features of HashMap
+1.	Key-Value Pair Storage:
+o	Each entry in a HashMap is stored as a key-value pair.
+o	Keys must be unique, but values can be duplicated.
+2.	No Order Guarantee:
+o	Does not maintain the order of elements.
+3.	Allows Null Keys and Values:
+o	Allows one null key and multiple null values.
+4.	Not Thread-Safe:
+o	By default, it is not synchronized. Use Collections.synchronizedMap() or ConcurrentHashMap for thread safety.
+5.	Efficient Operations:
+o	Provides average O(1) time complexity for basic operations like put() and get().
+
+*/
 
 public class HashMapDemo {
 
