@@ -2,7 +2,7 @@
 package chapter6;
 /*
  * 
- * Key Features of Vector
+ * Key Features of   Vector
 Dynamic Resizing:
 
 Automatically resizes itself when more space is needed.
