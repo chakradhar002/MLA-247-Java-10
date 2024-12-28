@@ -36,6 +36,42 @@ class ArrayQueue {
 		return size == capacity;
 
 	}
+	
+	// add on elment to the queue
+	
+	void enqueue(int element) {
+		
+		if(isFull()) {
+			
+			System.out.println("queue is full"+element);
+			return;
+		}
+		rear = (rear+1)% capacity;
+		queue[rear] =element;
+		size++;
+		System.out.println("enqueue"+element);
+	}
+	
+	
+int Dqueue() {
+		
+		if(isEmpty()) {
+			
+			System.out.println("queue is empty cannot dequeue");
+			return -1;
+		}
+		int element = queue[front];
+		front = (front+1)% capacity;
+		size--;
+		System.out.println("Dqueue"+element);
+		return element;
+	}
+	
+	
+	
+	
+	
+	
 }
 
 public class QueueArrayDemo {
@@ -45,8 +81,10 @@ public class QueueArrayDemo {
 		ArrayQueue queue = new ArrayQueue(4);
 	
 		queue.isFull();
-		
-		queue.isEmpty();
+	    queue.isEmpty();
+	    queue.enqueue(34);
+	    
+	    
 	}
 
 }
