@@ -1,0 +1,96 @@
+
+for (int i = 0; i < n - 0;i++)   
+
+for (int j = 0; j < 7 - 0 - 1; j++)   
+
+
+
+      a[0]=12, a[1] = 2                           n=7  i=0                  
+ 
+      [i=0 , i< 7-0,0+1]
+
+      0  1  2  3  4  5  6   
+	  
+	  12 3  23 1  67 19 18
+	  
+	  
+      
+	  
+After First Pass   
+
+for (int i = 1 ; i < 7 - 1; i++)     n became    n=6  i = 1
+
+for (int j = 1; j < 6 - 1 ; j++)     n became    n=6  i = 1
+   
+  if(arr[j]>[j+1])   a[0]=12 > a[1] = 1    than swap   
+      0  1  2  3  4  5  6
+	 
+	  3  12  23  67 19  1   
+	  
+After second Pass   
+
+for (int i = 2 ; i < 6 - 1; i++)     n became       n=5  i = 2
+
+for (int j = 2; j < 5 - 2- 1 ; j++)     n became    n=5  i = 2
+   
+  if(arr[j]>[j+1])   a[2]=23 > a[3]= 1   than swap 
+ 
+      0  1   2  3  4  5  6
+	 
+	  3  12  23 1  67 19 18   
+	  
+	  After third Pass   
+
+for (int i = 3 ; i < 3 - 1; i++)     n became       n=4  i = 3
+
+for (int j = 3; j < 4 - 2- 1 ; j++)     n became    n=4  i = 3
+   
+  if(arr[j]>[j+1])   a[4]=67 > a[5] = 19   then swap
+ 
+      0  1   2  3  4  5  6
+	 
+	  3  12  23 1  67 19 18   
+	  
+	  
+	  
+	  After forth Pass   
+
+for (int i = 4 ; i < 3 - 1; i++)        n became       n=3  i = 4
+
+for (int j = 4; j < 4 - 4- 1 ; j++)     n became       n=4  i = 4
+   
+  if(arr[j]>[j+1])   a[4]=67 > a[5] = 19   then swap
+ 
+      0  1   2  3  4  5  6
+	 
+	  3  12  23 1  19 67 18  
+	  
+	  
+	  After fift Pass   
+
+for (int i = 3 ; i < 2 - 1; i++)        n became       n=2  i = 5
+
+for (int j = 3; j < 3 - 2- 1 ; j++)     n became       n=2  i = 5
+   
+  if(arr[j]>[j+1])   a[5]=67 > a[6] = 18   then swap
+ 
+      0  1   2  3  4  5  6
+	 
+	  3  12  23 1  19 18 67 
+	  
+	  
+	  
+	  
+
+
+
+
+   
+
+
+
+
+
+
+
+ 
