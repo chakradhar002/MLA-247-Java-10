@@ -13,7 +13,7 @@ class MyThread extends Thread {
 		this.name = name;
 	}
 
-	void Run() {
+	public void run() {
 
 		for (int i = 0; i <= 5; i = i + 1) {
 			System.out.println(" thread is  running" + i);
