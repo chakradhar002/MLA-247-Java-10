@@ -1,0 +1,489 @@
+
+
+interface Animal {
+    void sound();
+    default void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Woof Woof");
+    }
+}
+
+class InterfaceDemo {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.sound();
+        dog.sleep();
+    }
+}
+
+Q1: What happens if the Dog class does not implement the sound() method?
+
+A) Compile-time error
+B) Runtime exception
+C) The program runs with no output
+D) sound() method from Animal interface is executed
+
+
+2. Abstract Classes
+
+abstract class Shape {
+    abstract void draw();
+    void display() {
+        System.out.println("This is a shape");
+    }
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a Circle");
+    }
+}
+
+class AbstractClassDemo {
+    public static void main(String[] args) {
+        Shape shape = new Circle();
+        shape.draw();
+        shape.display();
+    }
+}
+
+Q2: Can you create an object of the abstract class Shape?
+
+A) Yes
+B) No
+C) Only if all abstract methods are implemented
+D) Only if it's cast to a subclass
+
+
+3. Enum
+
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+class EnumDemo {
+    public static void main(String[] args) {
+        Day today = Day.FRIDAY;
+        System.out.println("Today is: " + today);
+    }
+}
+
+Q3: Which method is available in all enums by default?
+
+A) values()
+B) ordinal()
+C) name()
+D) All of the above
+
+
+4. String Manipulation
+
+class StringManipulation {
+    public static void main(String[] args) {
+        String str = "Java Programming";
+        System.out.println(str.toUpperCase());
+        System.out.println(str.substring(5, 11));
+        System.out.println(str.replace("a", "o"));
+    }
+}
+
+Q4: What is the output of str.substring(5, 11)?
+
+A) Java Pr
+B) Progra
+C) Program
+D) Java P
+
+
+5. Exceptions
+
+class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception: " + e.getMessage());
+        } finally {
+            System.out.println("Finally block executed");
+        }
+    }
+}
+
+Q5: Does the finally block execute if no exception is thrown?
+
+A) Yes
+B) No
+C) Only for unchecked exceptions
+D) Only for checked exceptions
+
+
+6. LinkedList
+
+import java.util.LinkedList;
+
+class LinkedListDemo {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("Java");
+        list.add("Python");
+        list.addFirst("C++");
+        System.out.println(list);
+    }
+}
+
+Q6: What does list.addFirst("C++") do?
+
+A) Adds "C++" to the end of the list
+B) Adds "C++" to the start of the list
+C) Replaces the first element with "C++"
+D) Throws an exception
+
+
+7. TreeSet
+
+import java.util.TreeSet;
+
+class TreeSetDemo {
+    public static void main(String[] args) {
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(5);
+        set.add(1);
+        set.add(3);
+        System.out.println(set);
+    }
+}
+
+Q7: What is the output of the program?
+
+A) [5, 1, 3]
+B) [1, 3, 5]
+C) [3, 1, 5]
+D) Undefined
+
+8. HashMap
+
+import java.util.HashMap;
+
+class HashMapDemo {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("A", 1);
+        map.put("B", 2);
+        System.out.println(map.get("A"));
+    }
+}
+
+Q8: What is the time complexity of map.put() in the average case?
+
+A) O(1)
+B) O(n)
+C) O(log n)
+D) O(n log n)
+
+
+9. Lambda Functions
+
+import java.util.ArrayList;
+
+class LambdaDemo {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.forEach(n -> System.out.println(n * 2));
+    }
+}
+
+Q9: What does the lambda expression n -> System.out.println(n * 2) do?
+
+A) Doubles each element and prints
+B) Prints each element as is
+C) Modifies the list
+D) Throws an error
+
+
+10. Complexity Analysis
+
+Q10: What is the time complexity of searching for an element in a balanced binary search tree?
+
+A) O(1)
+B) O(n)
+C) O(log n)
+D) O(n log n)
+
+11. ArrayList
+
+import java.util.ArrayList;
+
+class ArrayListDemo {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Python");
+        list.remove(0);
+        System.out.println(list);
+    }
+}
+
+Q11: What will be the output after removing the first element?
+
+A) [Java]
+B) [Python]
+C) []
+D) null
+
+
+12. Stack
+
+import java.util.Stack;
+
+class StackDemo {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(10);
+        stack.push(20);
+        System.out.println(stack.pop());
+    }
+}
+
+Q12: What is the output of stack.pop()?
+
+A) 10
+B) 20
+C) [10, 20]
+D) Exception
+
+
+13. Queue
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class QueueDemo {
+    public static void main(String[] args) {
+        Queue<String> queue = new LinkedList<>();
+        queue.add("A");
+        queue.add("B");
+        System.out.println(queue.peek());
+    }
+}
+
+Q13: What does queue.peek() return?
+
+A) A
+B) B
+C) null
+D) Exception
+
+
+14. PriorityQueue
+
+import java.util.PriorityQueue;
+
+class PriorityQueueDemo {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.add(5);
+        pq.add(1);
+        pq.add(3);
+        System.out.println(pq.poll());
+    }
+}
+
+Q14: What is the output of pq.poll()?
+
+A) 5
+B) 1
+C) 3
+D) Exception
+
+
+15. Sorting
+
+import java.util.Arrays;
+
+class SortingDemo {
+    public static void main(String[] args) {
+        int[] arr = {3, 1, 4};
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+Q15: What is the time complexity of Arrays.sort() for primitive types?
+
+A) O(1)
+B) O(n)
+C) O(n log n)
+D) O(n²)
+
+
+16. Polymorphism
+
+class Animal {
+    void sound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Meow");
+    }
+}
+
+class PolymorphismDemo {
+    public static void main(String[] args) {
+        Animal animal = new Cat();
+        animal.sound();
+    }
+}
+
+Q16: What is the output of the code?
+
+A) Some sound
+B) Meow
+C) Compile-time error
+D) Runtime exception
+
+
+17. Generics
+
+import java.util.ArrayList;
+
+class GenericsDemo {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        System.out.println(list.get(1));
+    }
+}
+
+Q17: What will happen if list.add("String") is used instead?
+
+A) Runtime exception
+B) Compile-time error
+C) No error, but unexpected behavior
+D) The program runs fine
+
+
+18. Binary Search
+
+import java.util.Arrays;
+
+class BinarySearchDemo {
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 5, 7};
+        System.out.println(Arrays.binarySearch(arr, 5));
+    }
+}
+
+Q18: What is the output of Arrays.binarySearch() when the element is found?
+
+A) Index of the element
+B) -1
+C) 0
+D) Length of the array
+
+
+19. Exception Propagation
+
+class ExceptionPropagation {
+    static void methodA() {
+        throw new RuntimeException("Error in A");
+    }
+
+    static void methodB() {
+        methodA();
+    }
+
+    public static void main(String[] args) {
+        try {
+            methodB();
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+Q19: Where is the exception handled?
+
+A) methodA
+B) methodB
+C) main method
+D) Nowhere
+
+
+20. Recursion
+
+class RecursionDemo {
+    static int factorial(int n) {
+        if (n == 0) return 1;
+        return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(factorial(5));
+    }
+}
+
+Q20: What is the time complexity of the factorial function?
+
+A) O(1)
+B) O(n)
+C) O(n²)
+D) O(n log n)
+
+
+21. HashSet
+
+What is the time complexity of adding an element to a HashSet in the average case?
+
+A) O(1)
+B) O(n)
+C) O(log n)
+D) O(n²)
+
+
+22. Stream API
+
+import java.util.Arrays;
+
+class StreamAPIDemo {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        Arrays.stream(arr).map(n -> n * 2).forEach(System.out::println);
+    }
+}
+Q22: What does the map operation do?
+
+A) Filters elements
+B) Modifies each element
+C) Converts the stream to a list
+D) Terminates the stream
+
+
+23. Static Block
+
+class StaticBlockDemo {
+    static {
+        System.out.println("Static Block Executed");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main Method");
+    }
+}
+Q23: When is the static block executed?
+
+A) After the main method
+B) Before the main method
+C) Only when explicitly called
+D) Never
