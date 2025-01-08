@@ -1,0 +1,23 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="4.0">
+
+    <!-- Define SourceServlet -->
+    <servlet>
+        <servlet-name>SourceServlet1</servlet-name>
+        <servlet-class>com.SourceServlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SourceServlet1</servlet-name>
+        <url-pattern>/source</url-pattern>
+    </servlet-mapping>
+
+    <!-- Define TargetServlet -->
+    <servlet>
+        <servlet-name>TargetServlet</servlet-name>
+        <servlet-class>com.TargetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TargetServlet</servlet-name>
+        <url-pattern>/target</url-pattern>
+    </servlet-mapping>
+
+</web-app>
