@@ -2,11 +2,20 @@
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>com.HelloServlet</servlet-class>
+
+       <servlet-name>MySignUp</servlet-name>
+        <servlet-class>com.MySignUp</servlet-class>
+    
+    
     </servlet>
     
     
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/HelloServlet</url-pattern>
+        
+        
+        <servlet-name>MySignUp</servlet-name>
+        <url-pattern>/signup</url-pattern>
     </servlet-mapping>
 </web-app>

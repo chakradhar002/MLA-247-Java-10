@@ -18,12 +18,4 @@ public class HelloServlet extends HttpServlet {
         response.getWriter().println("<h1>Hello, Welcome to the Servlet Demo!</h1>");
     }
 
-    // Handle POST Request
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html");
-        String name = request.getParameter("name");
-        response.getWriter().println("<h1>Hi, " + name + "! Your POST request is successful.</h1>");
-    }
 }
