@@ -1,0 +1,2 @@
+send redirect ,Request Dispatcher ,http servelt ,servet Config,
+servlet interface,print write ,set contenttype,web.xml, servletfileter ,doget,do psot,dodelete,doput
