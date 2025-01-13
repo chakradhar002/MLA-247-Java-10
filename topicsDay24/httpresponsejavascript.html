@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API with JSON Body</title>
+</head>
+<body>
+  <h1>Send JSON Data with Fetch</h1>
+  <form id="postForm">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" required><br><br>
+    <label for="body">Body:</label><br>
+    <textarea id="body" name="body" required></textarea><br><br>
+    <label for="userId">User ID:</label><br>
+    <input type="number" id="userId" name="userId" required><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Response</h2>
+  <pre id="responseOutput"></pre>
+
+  <script>
+    document.getElementById('postForm').addEventListener('submit', async function (event) {
+      event.preventDefault(); // Prevent form from refreshing the page
+      
+      // Get form data
+      const title = document.getElementById('title').value;
+      const body = document.getElementById('body').value;
+      const userId = document.getElementById('userId').value;
+
+      // API URL
+      const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+      try {
+        // Send POST request
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ title, body, userId })
+        });
+
+        // Check for HTTP errors
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        // Parse JSON response
+        const data = await response.json();
+
+        // Display the response
+        document.getElementById('responseOutput').textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        // Handle errors
+        document.getElementById('responseOutput').textContent = `Error: ${error.message}`;
+      }
+    });
+  </script>
+</body>
+</html>
